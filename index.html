@@ -222,29 +222,61 @@
       padding: 80px 40px;
     }
     .about-inner { max-width: var(--max-w); margin: 0 auto; }
+    .about-header { margin-bottom: 32px; }
     .about-title {
-      font-size: clamp(28px, 4vw, 44px);
+      font-size: clamp(32px, 5vw, 52px);
       font-weight: 900; text-transform: uppercase;
       color: var(--white); letter-spacing: 2px;
-      margin-bottom: 8px;
+      margin-bottom: 8px; line-height: 1.1;
     }
-    .about-sub { font-size: 16px; color: rgba(255,255,255,0.8); margin-bottom: 40px; font-weight: 500; }
+    .about-tagline {
+      font-size: clamp(16px, 2vw, 22px);
+      font-weight: 600; color: rgba(255,255,255,0.85);
+      font-style: italic; margin-bottom: 20px;
+    }
+    .about-tags {
+      display: flex; flex-wrap: wrap; gap: 10px;
+    }
+    .about-tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: var(--white);
+      padding: 6px 18px; border-radius: 50px;
+      font-size: 13px; font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .about-tag-year {
+      background: rgba(0,0,0,0.25);
+      border-color: rgba(255,255,255,0.5);
+      font-size: 15px;
+    }
+    .about-desc {
+      font-size: 16px; color: rgba(255,255,255,0.92);
+      line-height: 1.8; margin-bottom: 32px;
+      background: rgba(0,0,0,0.15);
+      border-left: 4px solid rgba(255,255,255,0.5);
+      padding: 16px 20px; border-radius: 0 8px 8px 0;
+    }
     .about-points { list-style: none; display: flex; flex-direction: column; gap: 20px; }
     .about-point {
-      display: flex; align-items: flex-start; gap: 16px;
+      display: flex; align-items: flex-start; gap: 20px;
       background: rgba(255,255,255,0.12);
       border: 1px solid rgba(255,255,255,0.25);
       border-radius: 12px; padding: 24px 28px;
+      transition: background 0.2s;
     }
-    .about-point-icon {
+    .about-point:hover { background: rgba(255,255,255,0.18); }
+    .about-point-num {
       width: 44px; height: 44px; flex-shrink: 0;
-      background: rgba(255,255,255,0.2); border-radius: 50%;
+      background: rgba(255,255,255,0.9);
+      border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
-      font-size: 20px;
+      font-size: 20px; font-weight: 900; color: var(--orange);
     }
     .about-point-text {}
-    .about-point-title { font-size: 17px; font-weight: 800; color: var(--white); margin-bottom: 6px; }
-    .about-point-desc { font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.7; }
+    .about-point-title { font-size: 17px; font-weight: 800; color: var(--white); margin-bottom: 8px; }
+    .about-point-desc { font-size: 14px; color: rgba(255,255,255,0.82); line-height: 1.75; }
 
     /* ===== PRICING TABLE ===== */
     #pricing {
@@ -387,8 +419,26 @@
       border-left: 4px solid var(--orange);
       border-radius: 8px; padding: 16px 20px;
     }
-    .ra-highlight-num { font-size: 32px; font-weight: 900; color: var(--orange); line-height: 1; }
-    .ra-highlight-text { font-size: 13px; color: var(--text-gray); font-weight: 600; margin-top: 4px; }
+    .ra-highlight-num { font-size: 28px; font-weight: 900; color: var(--orange); line-height: 1; }
+    .ra-highlight-text { font-size: 12px; color: var(--text-gray); font-weight: 600; margin-top: 4px; }
+    .ra-partner-box {
+      margin-top: 24px; margin-bottom: 8px;
+      background: var(--white);
+      border: 1px solid #eee; border-radius: 12px;
+      padding: 20px 24px;
+    }
+    .ra-partner-label {
+      font-size: 13px; font-weight: 700; color: var(--orange);
+      text-transform: uppercase; letter-spacing: 1px;
+      margin-bottom: 14px;
+    }
+    .ra-partner-list { display: flex; flex-wrap: wrap; gap: 8px; }
+    .ra-partner-tag {
+      display: inline-block;
+      background: #f8f8f8; border: 1px solid #e8e8e8;
+      border-radius: 50px; padding: 6px 14px;
+      font-size: 13px; font-weight: 600; color: var(--text-dark);
+    }
     .ra-image { width: 100%; border-radius: 20px; object-fit: cover; display: block; }
 
     /* ===== STEPS ===== */
@@ -435,6 +485,150 @@
     }
     .cta-sub { font-size: 18px; color: rgba(255,255,255,0.85); margin-bottom: 36px; }
     .cta-buttons { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+
+    /* ===== COMMUNITY TEAMS ===== */
+    #community { background: #fff; }
+    .community-top {
+      background: linear-gradient(160deg, #E97020 0%, #d45f10 60%, #ab5806 100%);
+      padding: 60px 40px 80px;
+    }
+    .community-header-row {
+      display: flex; justify-content: space-between; align-items: center;
+      max-width: var(--max-w); margin: 0 auto 40px;
+      flex-wrap: wrap; gap: 16px;
+    }
+    .community-avatars-side { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+    .community-avatars { display: flex; }
+    .c-avatar {
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 2px solid white; color: white;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 800;
+      margin-right: -8px;
+    }
+    .community-count-label {
+      font-size: 14px; font-weight: 700; color: rgba(255,255,255,0.9);
+      margin-top: 8px; margin-left: 4px;
+    }
+    .community-count-label span { font-weight: 400; }
+    .community-title-center {
+      font-size: clamp(16px, 2.5vw, 22px); font-weight: 700;
+      color: var(--white); text-align: center; font-style: italic;
+      flex: 1; text-align: center;
+    }
+    .community-total-side { text-align: right; }
+    .community-total-num { font-size: clamp(22px, 3vw, 32px); font-weight: 900; color: var(--white); }
+    .community-total-sub { font-size: 13px; color: rgba(255,255,255,0.8); font-weight: 500; }
+
+    /* Carousel */
+    .team-carousel-wrap {
+      position: relative; max-width: 520px; margin: 0 auto;
+    }
+    .team-carousel { overflow: hidden; }
+    .team-slide { display: none; animation: fadeSlide 0.4s ease; }
+    .team-slide.active { display: block; }
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateX(20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    .team-card-photo {
+      width: 200px; height: 220px; margin: 0 auto 0;
+      border-radius: 24px 24px 0 0;
+      overflow: hidden;
+      border: 3px solid rgba(255,255,255,0.3);
+      position: relative;
+    }
+    .team-card-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .team-card-info {
+      background: var(--blue);
+      border-radius: 16px;
+      padding: 20px 28px;
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: -4px;
+    }
+    .team-card-name { font-size: 18px; font-weight: 800; color: var(--white); }
+    .team-card-km-wrap { text-align: right; }
+    .team-card-km-label { font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.7); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+    .team-card-km-val { display: flex; align-items: center; gap: 8px; }
+    .team-card-km-val span {
+      background: rgba(255,255,255,0.15); border-radius: 8px;
+      padding: 4px 12px; font-size: 22px; font-weight: 900; color: var(--white);
+    }
+    .team-card-km-val { color: var(--white); font-size: 15px; font-weight: 600; }
+    .carousel-arrow {
+      position: absolute; top: 50%; transform: translateY(-70%);
+      background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.4);
+      color: white; border-radius: 50%;
+      width: 40px; height: 40px; font-size: 24px;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; z-index: 2; transition: background 0.2s;
+    }
+    .carousel-arrow:hover { background: rgba(255,255,255,0.35); }
+    .carousel-prev { left: -50px; }
+    .carousel-next { right: -50px; }
+    .carousel-dots { display: flex; justify-content: center; gap: 8px; margin-top: 20px; }
+    .c-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: rgba(255,255,255,0.35); transition: background 0.2s;
+    }
+    .c-dot.active { background: var(--white); }
+
+    /* Profiles */
+    .profiles-section {
+      background: linear-gradient(160deg, #E97020 0%, #d45f10 60%, #ab5806 100%);
+      padding: 40px 40px 64px;
+    }
+    .profiles-title {
+      font-size: clamp(28px, 5vw, 52px); font-weight: 900;
+      color: var(--white); margin-bottom: 32px;
+      max-width: var(--max-w); margin-left: auto; margin-right: auto;
+      padding-bottom: 0;
+    }
+    .profiles-grid {
+      display: grid; grid-template-columns: repeat(6, 1fr);
+      gap: 16px; max-width: var(--max-w); margin: 0 auto;
+    }
+    .profile-card {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 14px; padding: 16px 14px;
+      text-align: center;
+      transition: all 0.25s;
+    }
+    .profile-card:hover {
+      background: rgba(255,255,255,0.22);
+      transform: translateY(-4px);
+    }
+    .profile-status {
+      font-size: 11px; font-weight: 700;
+      color: #4ade80; text-align: left;
+      margin-bottom: 12px; letter-spacing: 0.5px;
+    }
+    .profile-avatar {
+      width: 52px; height: 52px; border-radius: 50%;
+      margin: 0 auto 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; font-weight: 900; color: white;
+      border: 2px solid rgba(255,255,255,0.3);
+    }
+    .profile-name { font-size: 13px; font-weight: 700; color: var(--white); margin-bottom: 4px; line-height: 1.3; }
+    .profile-meta { font-size: 11px; color: rgba(255,255,255,0.6); margin-bottom: 10px; }
+    .profile-km {
+      display: inline-block;
+      background: var(--blue); color: white;
+      font-size: 12px; font-weight: 800;
+      padding: 4px 12px; border-radius: 50px;
+    }
+    @media (max-width: 1024px) {
+      .profiles-grid { grid-template-columns: repeat(3, 1fr); }
+      .carousel-prev { left: -20px; }
+      .carousel-next { right: -20px; }
+    }
+    @media (max-width: 640px) {
+      .profiles-grid { grid-template-columns: repeat(2, 1fr); }
+      .community-header-row { flex-direction: column; align-items: center; text-align: center; }
+      .community-total-side { text-align: center; }
+    }
 
     /* ===== FOOTER ===== */
     footer {
@@ -592,28 +786,39 @@
 <!-- ===== ABOUT (orange) ===== -->
 <section id="about">
   <div class="about-inner">
-    <div class="about-title reveal">Về Run To Jeju 2026</div>
-    <p class="about-sub reveal">Sự kiện Virtual Run quốc gia kết nối runner Việt Nam với đấu trường thế giới</p>
+    <div class="about-header reveal">
+      <div class="about-title">Về Run To JeJu</div>
+      <div class="about-tagline">Tạo nên sự khác biệt</div>
+      <div class="about-tags">
+        <span class="about-tag">/Đồng đội</span>
+        <span class="about-tag about-tag-year">2026</span>
+        <span class="about-tag">/Tinh thần</span>
+        <span class="about-tag">/Quyết tâm</span>
+      </div>
+    </div>
+    <p class="about-desc reveal">
+      <strong>Run to Jeju</strong> là giải chạy ảo (Virtual Run) quy mô toàn quốc, lấy cảm hứng từ hòn đảo Jeju – thiên đường du lịch của Hàn Quốc. Giải chạy ảo mang đến cho bạn một sân chơi với <strong>3 mục tiêu cốt lõi:</strong>
+    </p>
     <ul class="about-points">
       <li class="about-point reveal">
-        <div class="about-point-icon">⚡</div>
+        <div class="about-point-num">1</div>
         <div class="about-point-text">
-          <div class="about-point-title">Tinh thần thể thao đích thực</div>
-          <div class="about-point-desc">Khuyến khích rèn luyện thể chất hàng ngày với tinh thần trung thực và nghiêm túc. Mọi kết quả gian lận đều bị loại — mỗi km bạn tích lũy phản ánh đúng nỗ lực thật sự.</div>
+          <div class="about-point-title">Lan Tỏa Tinh Thần Thượng Võ</div>
+          <div class="about-point-desc">Khuyến khích phong trào rèn luyện sức khoẻ, thúc đẩy cộng đồng hãy xỏ giày, hãy chạy thật mỗi ngày. Nghiêm khắc loại trừ những kết quả ảo tại vòng Lottery.</div>
         </div>
       </li>
       <li class="about-point reveal">
-        <div class="about-point-icon">🌏</div>
+        <div class="about-point-num">2</div>
         <div class="about-point-text">
-          <div class="about-point-title">Kết nối đấu trường quốc tế</div>
-          <div class="about-point-desc">Cầu nối đưa vận động viên Việt Nam đến Trans Jeju by UTMB® — sân chơi ultra trail hàng đầu châu Á và cơ hội vươn ra 5 châu lục.</div>
+          <div class="about-point-title">Kết Nối &amp; Vươn Tầm Quốc Tế</div>
+          <div class="about-point-desc">Quảng bá giải chạy Trans Jeju by UTMB® – sự kiện trail lớn nhất Hàn Quốc, đồng thời đưa runner Việt Nam tiến ra biển lớn.</div>
         </div>
       </li>
       <li class="about-point reveal">
-        <div class="about-point-icon">❤️</div>
+        <div class="about-point-num">3</div>
         <div class="about-point-text">
-          <div class="about-point-title">Chạy vì cộng đồng</div>
-          <div class="about-point-desc">Mỗi bước chân của bạn góp phần vào quỹ y tế hỗ trợ trẻ em và người dân vùng cao khó khăn. Chạy không chỉ cho mình.</div>
+          <div class="about-point-title">Chạy Vì Cộng Đồng</div>
+          <div class="about-point-desc">Mỗi bước chạy của bạn sẽ đóng góp trực tiếp vào quỹ chăm sóc sức khoẻ cộng đồng, mang lại nụ cười và hy vọng cho các em nhỏ và đồng bào vùng cao.</div>
         </div>
       </li>
     </ul>
@@ -701,17 +906,20 @@
 <!-- ===== PRIZES ===== -->
 <section id="prizes">
   <div class="prizes-header reveal">
-    <div class="section-label">Giải thưởng & Đặc quyền</div>
-    <h2 class="section-title">PHẦN THƯỞNG XỨNG TẦM</h2>
-    <p style="color: var(--text-gray); font-size:16px; max-width:520px; margin: 0 auto;">Chinh phục thách thức — nhận vinh quang xứng đáng.</p>
+    <div class="section-label">Giải thưởng & Đặc quyền (Race Kit)</div>
+    <h2 class="section-title">NHỮNG PHẦN QUÀ XỨNG ĐÁNG<br />CHO SỰ BỀN BỈ</h2>
+    <p style="color: var(--text-gray); font-size:16px; max-width:580px; margin: 0 auto;">Chinh phục thách thức — nhận vinh quang xứng đáng.</p>
   </div>
   <div class="prizes-grid">
     <div class="prize-card reveal">
       <div class="prize-card-header">
         <div class="prize-card-label">🏆 Giải đặc biệt</div>
-        <div class="prize-card-title">03 SUẤT THI ĐẤU<br />TRANS JEJU BY UTMB® 2026</div>
+        <div class="prize-card-title">03 SUẤT THAM DỰ TRANS JEJU BY UTMB 2026 HOÀN TOÀN MIỄN PHÍ</div>
       </div>
       <div class="prize-card-body">
+        <p style="font-size:15px; color:var(--text-gray); line-height:1.8; margin-bottom:20px;">
+          Trải nghiệm giải Trail danh giá giữa thiên nhiên Jeju hùng vĩ, nơi mỗi con dốc, mỗi đoạn rừng đều khiến trái tim người chạy rung lên vì xúc động.
+        </p>
         <ul class="prize-list">
           <li>Dành cho <strong>Top 3 nam &amp; nữ</strong> có thành tích xuất sắc nhất</li>
           <li>Suất tham dự được <strong>tài trợ toàn phần</strong> bởi Runcation Vietnam</li>
@@ -721,19 +929,33 @@
         </ul>
       </div>
     </div>
-    <div class="prize-card reveal">
-      <div class="prize-card-header blue">
-        <div class="prize-card-label">🎁 Race Kit độc quyền</div>
-        <div class="prize-card-title">DÀNH CHO GÓI PREMIUM</div>
+    <div style="display:flex; flex-direction:column; gap:24px;">
+      <div class="prize-card reveal">
+        <div class="prize-card-header blue">
+          <div class="prize-card-label">🎖️ Giải thưởng phụ</div>
+          <div class="prize-card-title">GIẢI THƯỞNG PHỤ HẤP DẪN</div>
+        </div>
+        <div class="prize-card-body">
+          <p style="font-size:15px; color:var(--text-gray); line-height:1.8;">
+            Hàng loạt phần quà thiết thực cho tinh thần tập luyện của runner sẽ được ưu ái dành riêng cho từng hạng mục — từ thành tích cá nhân, độ tuổi cho đến đội nhóm xuất sắc nhất.
+          </p>
+        </div>
       </div>
-      <div class="prize-card-body">
-        <ul class="prize-list">
-          <li><strong>Medal Jeju Island</strong> — thiết kế độc quyền, chủ đề núi lửa Hallasan &amp; sóng biển</li>
-          <li><strong>Áo sự kiện chất lượng cao</strong> — chất liệu thể thao, in ấn sắc nét</li>
-          <li><strong>E-Certificate</strong> — chứng nhận cá nhân hóa ghi tên &amp; thành tích</li>
-          <li>Gói quà từ <strong>đối tác thể thao &amp; dinh dưỡng</strong></li>
-          <li>Race Kit <strong>giao tận nhà</strong>, đóng gói đẹp mắt</li>
-        </ul>
+      <div class="prize-card reveal">
+        <div class="prize-card-header" style="background: linear-gradient(135deg, #1a1a1a, #333);">
+          <div class="prize-card-label">🎁 Race Kit độc quyền</div>
+          <div class="prize-card-title">BỘ VẬT PHẨM VINH DANH</div>
+        </div>
+        <div class="prize-card-body">
+          <ul class="prize-list">
+            <li><strong>Huy chương</strong> thiết kế mang đậm dấu ấn Jeju</li>
+            <li><strong>Áo thun sự kiện</strong> cao cấp</li>
+            <li><strong>E-Certificate</strong> chứng nhận những nỗ lực không ngừng nghỉ của bạn</li>
+          </ul>
+          <p style="font-size:13px; color:var(--text-gray); margin-top:16px; font-style:italic;">
+            * Tùy thuộc vào gói đăng ký
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -782,35 +1004,46 @@
 <section id="runcation-about">
   <div class="ra-inner">
     <div class="ra-text reveal">
-      <div class="section-label">Về chúng tôi</div>
+      <div class="section-label">Sự kiện được bảo chứng bởi các chuyên gia</div>
       <h2 class="section-title">RUNCATION<br />VIETNAM</h2>
       <p class="section-body">
-        TNHH TM Du Lịch Runcation Việt Nam là đơn vị tiên phong về <strong>du lịch thể thao kết hợp thi đấu quốc tế</strong> tại Việt Nam. Chúng tôi chuyên tổ chức tour trọn gói cho các giải chạy danh giá thế giới — từ Six Majors, Ironman đến UTMB.
+        Đơn vị tiên phong và dẫn đầu trong lĩnh vực <strong>Du lịch Thể thao kết hợp thi đấu quốc tế</strong> tại Việt Nam. Đội ngũ sáng lập sở hữu <strong>20 năm kinh nghiệm</strong> trong ngành du lịch, từng vận hành logistics thành công cho các giải chạy quy mô lớn như <strong>LAAN Ultra Trail</strong> với hơn 3.000 VĐV.
       </p>
       <p class="section-body" style="margin-top: 16px; color: var(--text-gray);">
-        Mỗi chương trình của Runcation không chỉ đơn thuần là một chuyến đi — đó là hành trình trải nghiệm, kết nối cộng đồng và chinh phục đỉnh cao thể thao của runner Việt Nam trên toàn thế giới.
+        Chúng tôi là <strong>đối tác chiến lược của Cục Du lịch Hàn Quốc (KTO)</strong> và các BTC giải UTMB danh giá toàn cầu.
       </p>
+      <div class="ra-partner-box reveal">
+        <div class="ra-partner-label">🤝 Đối tác liên kết</div>
+        <div class="ra-partner-list">
+          <span class="ra-partner-tag">🏃 CLB chạy bộ Việt Nam</span>
+          <span class="ra-partner-tag">📣 Đơn vị truyền thông</span>
+          <span class="ra-partner-tag">⭐ KOL / Influencer</span>
+          <span class="ra-partner-tag">✈️ Hãng hàng không</span>
+          <span class="ra-partner-tag">🏨 Khách sạn</span>
+          <span class="ra-partner-tag">👟 Thương hiệu thể thao</span>
+        </div>
+      </div>
       <div class="ra-highlights">
         <div class="ra-highlight">
-          <div class="ra-highlight-num">5</div>
-          <div class="ra-highlight-text">Châu lục đã chinh phục</div>
+          <div class="ra-highlight-num">20</div>
+          <div class="ra-highlight-text">Năm kinh nghiệm</div>
         </div>
         <div class="ra-highlight">
-          <div class="ra-highlight-num">24/7</div>
-          <div class="ra-highlight-text">Hỗ trợ runner</div>
+          <div class="ra-highlight-num">3K+</div>
+          <div class="ra-highlight-text">VĐV LAAN Ultra Trail</div>
         </div>
         <div class="ra-highlight">
-          <div class="ra-highlight-num">100+</div>
-          <div class="ra-highlight-text">Tour quốc tế</div>
+          <div class="ra-highlight-num">KTO</div>
+          <div class="ra-highlight-text">Đối tác Cục Du lịch Hàn Quốc</div>
         </div>
         <div class="ra-highlight">
-          <div class="ra-highlight-num">1K+</div>
-          <div class="ra-highlight-text">Runners tin tưởng</div>
+          <div class="ra-highlight-num">UTMB</div>
+          <div class="ra-highlight-text">Đối tác BTC quốc tế</div>
         </div>
       </div>
     </div>
     <div class="reveal">
-      <img src="assets/community.png" alt="Runcation Vietnam cộng đồng runner" class="ra-image" />
+      <img src="assets/community.png" alt="Runcation Vietnam — Đội ngũ chuyên gia thể thao" class="ra-image" />
     </div>
   </div>
 </section>
@@ -842,6 +1075,145 @@
       <div class="step-circle">04</div>
       <div class="step-title">Chạy & Nộp</div>
       <p class="step-desc">Hoàn thành quãng đường, nộp kết quả — top 3 giành suất UTMB!</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COMMUNITY TEAMS ===== -->
+<section id="community">
+  <div class="community-top">
+    <div class="community-header-row">
+      <div class="community-avatars-side">
+        <div class="community-avatars">
+          <div class="c-avatar" style="background:#E97020;">TH</div>
+          <div class="c-avatar" style="background:#2B57B1;">NV</div>
+          <div class="c-avatar" style="background:#333;">MQ</div>
+          <div class="c-avatar" style="background:#c0392b;">LA</div>
+        </div>
+        <div class="community-count-label">125+ <span>đang chạy</span></div>
+      </div>
+      <div class="community-title-center reveal">Tổng hợp các đội đang tham gia</div>
+      <div class="community-total-side">
+        <div class="community-total-num">1000 Người</div>
+        <div class="community-total-sub">cùng tham gia</div>
+      </div>
+    </div>
+
+    <!-- Carousel -->
+    <div class="team-carousel-wrap reveal">
+      <button class="carousel-arrow carousel-prev" id="carouselPrev">&#8249;</button>
+      <div class="team-carousel" id="teamCarousel">
+
+        <div class="team-slide active">
+          <div class="team-card-photo">
+            <img src="assets/community.png" alt="Đội chạy" />
+          </div>
+          <div class="team-card-info">
+            <div class="team-card-name">Thanh Hà Family</div>
+            <div class="team-card-km-wrap">
+              <div class="team-card-km-label">ĐOẠN ĐƯỜNG ĐÃ CHẠY</div>
+              <div class="team-card-km-val"><span>105</span> Km</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-slide">
+          <div class="team-card-photo">
+            <img src="assets/hero.png" alt="Đội chạy" />
+          </div>
+          <div class="team-card-info">
+            <div class="team-card-name">Saigon Runners Club</div>
+            <div class="team-card-km-wrap">
+              <div class="team-card-km-label">ĐOẠN ĐƯỜNG ĐÃ CHẠY</div>
+              <div class="team-card-km-val"><span>88</span> Km</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-slide">
+          <div class="team-card-photo">
+            <img src="assets/community.png" alt="Đội chạy" />
+          </div>
+          <div class="team-card-info">
+            <div class="team-card-name">Mekong Trail Team</div>
+            <div class="team-card-km-wrap">
+              <div class="team-card-km-label">ĐOẠN ĐƯỜNG ĐÃ CHẠY</div>
+              <div class="team-card-km-val"><span>72</span> Km</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-slide">
+          <div class="team-card-photo">
+            <img src="assets/hero.png" alt="Đội chạy" />
+          </div>
+          <div class="team-card-info">
+            <div class="team-card-name">Hanoi Mountain Runners</div>
+            <div class="team-card-km-wrap">
+              <div class="team-card-km-label">ĐOẠN ĐƯỜNG ĐÃ CHẠY</div>
+              <div class="team-card-km-val"><span>95</span> Km</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <button class="carousel-arrow carousel-next" id="carouselNext">&#8250;</button>
+
+      <div class="carousel-dots" id="carouselDots">
+        <span class="c-dot active"></span>
+        <span class="c-dot"></span>
+        <span class="c-dot"></span>
+        <span class="c-dot"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hồ sơ trực tuyến -->
+  <div class="profiles-section reveal">
+    <h3 class="profiles-title">Hồ sơ trực tuyến</h3>
+    <div class="profiles-grid">
+      <div class="profile-card">
+        <div class="profile-status">● Active</div>
+        <div class="profile-avatar" style="background: linear-gradient(135deg,#E97020,#c85a10);">TH</div>
+        <div class="profile-name">Đội Phạm Thanh Hà</div>
+        <div class="profile-meta">Bắt đầu: 01/05</div>
+        <div class="profile-km">105 Km</div>
+      </div>
+      <div class="profile-card">
+        <div class="profile-status">● Active</div>
+        <div class="profile-avatar" style="background: linear-gradient(135deg,#2B57B1,#1a3d8a);">SR</div>
+        <div class="profile-name">Saigon Runners</div>
+        <div class="profile-meta">Your bid</div>
+        <div class="profile-km">88 Km</div>
+      </div>
+      <div class="profile-card">
+        <div class="profile-status">● Active</div>
+        <div class="profile-avatar" style="background: linear-gradient(135deg,#27ae60,#1e8449);">MT</div>
+        <div class="profile-name">Mekong Trail</div>
+        <div class="profile-meta">Your bid</div>
+        <div class="profile-km">72 Km</div>
+      </div>
+      <div class="profile-card">
+        <div class="profile-status">● Active</div>
+        <div class="profile-avatar" style="background: linear-gradient(135deg,#8e44ad,#6c3483);">HM</div>
+        <div class="profile-name">Hanoi Mountain</div>
+        <div class="profile-meta">Your bid</div>
+        <div class="profile-km">95 Km</div>
+      </div>
+      <div class="profile-card">
+        <div class="profile-status">● Active</div>
+        <div class="profile-avatar" style="background: linear-gradient(135deg,#c0392b,#922b21);">DA</div>
+        <div class="profile-name">Da Nang All-Stars</div>
+        <div class="profile-meta">Your bid</div>
+        <div class="profile-km">67 Km</div>
+      </div>
+      <div class="profile-card">
+        <div class="profile-status">● Active</div>
+        <div class="profile-avatar" style="background: linear-gradient(135deg,#E97020,#ab5806);">RC</div>
+        <div class="profile-name">Run Club HCM</div>
+        <div class="profile-meta">Your bid</div>
+        <div class="profile-km">81 Km</div>
+      </div>
     </div>
   </div>
 </section>
@@ -918,8 +1290,25 @@
     nav.classList.toggle('solid', window.scrollY > 60);
   });
 
-  // Reveal on scroll
+  // Reveal
   const reveals = document.querySelectorAll('.reveal');
+  
+  // Carousel logic
+  const slides = document.querySelectorAll('.team-slide');
+  const dots = document.querySelectorAll('.c-dot');
+  let current = 0;
+  function goTo(idx) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (idx + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+  document.getElementById('carouselNext')?.addEventListener('click', () => goTo(current + 1));
+  document.getElementById('carouselPrev')?.addEventListener('click', () => goTo(current - 1));
+  dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+  setInterval(() => goTo(current + 1), 4000);
+
   reveals.forEach(el => el.classList.add('hidden'));
   const obs = new IntersectionObserver((entries) => {
     entries.forEach(e => {
